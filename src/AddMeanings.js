@@ -13,7 +13,10 @@ const AddMeanings = ({ meanings, setMeanings }) => {
     wordsList.forEach(async (word) => {
       try {
         const response = await axios.get(`${API_URL}/${word}`);
-        newMeanings.push(response);
+        setMeanings((previousMeanings) => [
+          ...previousMeanings,
+          response.data[0],
+        ]);
       } catch (error) {
         console.log(error);
       }

@@ -1,5 +1,5 @@
 const WordMeaning = ({ meaning }) => {
-  return <p>Hello</p>;
+  return <p>{meaning.word}</p>;
 };
 
 export default WordMeaning;
