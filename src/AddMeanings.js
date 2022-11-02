@@ -21,7 +21,6 @@ const AddMeanings = ({ meanings, setMeanings }) => {
         console.log(error);
       }
     });
-    console.table(newMeanings);
 
     setpassedWords("");
   };

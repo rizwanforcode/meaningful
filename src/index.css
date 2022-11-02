@@ -29,6 +29,7 @@ code {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 .input-group {
   height: 3rem;
@@ -55,4 +56,17 @@ code {
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
+}
+.meaning-box {
+  margin-top: 1rem;
+}
+.word {
+  font-size: 2rem;
+  margin: 0;
+}
+.part-of-speech {
+  font-style: italic;
+}
+.meaning {
+  border-bottom: 2px solid #bbb;
 }
