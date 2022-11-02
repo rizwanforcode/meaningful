@@ -58,7 +58,6 @@ code {
   font-size: 1.4rem;
 }
 .meaning-box {
-  margin-top: 1rem;
 }
 .word {
   font-size: 2rem;
@@ -68,5 +67,6 @@ code {
   font-style: italic;
 }
 .meaning {
+  margin-top: 2rem;
   border-bottom: 2px solid #bbb;
 }
