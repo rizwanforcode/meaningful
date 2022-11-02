@@ -1,20 +1,13 @@
-import { BsSearch } from "react-icons/bs";
+import { useState } from "react";
+import MeaningsBox from "./MeaningsBox";
+import AddMeanings from "./AddMeanings";
 
 function App() {
+  const [meanings, setMeanings] = useState([]);
   return (
     <div className="container">
-      <form class="search-form">
-        <div className="input-group">
-          <input
-            className="search-field"
-            type="text"
-            placeholder="Enter a word or group of words"
-          />
-          <button type="submit" className="search-icon-wrapper">
-            <BsSearch className="search-icon" />
-          </button>
-        </div>
-      </form>
+      <AddMeanings setMeanings={setMeanings} />
+      <MeaningsBox meanings={meanings} />
     </div>
   );
 }
