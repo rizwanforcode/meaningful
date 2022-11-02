@@ -2,11 +2,11 @@ import WordMeaning from "./WordMeaning";
 
 const MeaningsBox = ({ meanings }) => {
   return (
-    <main className="meaning-box">
+    <div>
       {meanings.map((meaning, index) => (
-        <WordMeaning meaning={meaning} key={index} />
+        <WordMeaning key={index} meaning={meaning} />
       ))}
-    </main>
+    </div>
   );
 };
 

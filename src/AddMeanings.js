@@ -1,24 +1,30 @@
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import axios from "axios";
 const API_URL = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
-const AddMeanings = ({ setMeanings }) => {
+const AddMeanings = ({ meanings, setMeanings }) => {
   const [passedWords, setpassedWords] = useState("");
-
-  const getWordMeaning = async (e) => {
-    try {
-      // const response = await
-    } catch {}
-  };
 
   const passedWordsEntered = (e) => {
     e.preventDefault();
     const wordsList = passedWords.split(" ");
-    wordsList.forEach((word) => {
-      getWordMeaning(word);
+    const newMeanings = [];
+    wordsList.forEach(async (word) => {
+      try {
+        const response = await axios.get(`${API_URL}/${word}`);
+        newMeanings.push(response);
+      } catch (error) {
+        console.log(error);
+      }
     });
+    console.table(newMeanings);
+
     setpassedWords("");
   };
+
+  // incase you need to change the value multiple times you'll have to use another way of dealing with things in useState
+
   return (
     <form className="search-form" onSubmit={passedWordsEntered}>
       <div className="input-group">
